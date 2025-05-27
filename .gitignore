@@ -3,3 +3,4 @@
 node_modules
 uploads/
 ./serviceAccountKey.json
+backend-twinmind/serviceAccountKey.json
