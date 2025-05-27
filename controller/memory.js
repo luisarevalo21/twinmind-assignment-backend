@@ -53,6 +53,7 @@ const newPrompt = async (req, res, parsedText = null) => {
     },
   ];
   try {
+    console.log("parsedText", parsedText);
     //genreate summary on text text sent
     //duplicated coude i know, couldn't get it to work otherwise
     if (memoryId && typeof parsedText === "string") {
@@ -101,7 +102,7 @@ const newPrompt = async (req, res, parsedText = null) => {
     }
   } catch (err) {
     console.log("error occured");
-    throw new Error(err);
+    return res.status(500).json({ message: "Error processing request" });
   }
   //if a userId was sent isntead fetch all the memoryies of the user and send to oepn ai based on the question asked
   //send back the text formatted

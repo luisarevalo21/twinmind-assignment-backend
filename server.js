@@ -31,12 +31,6 @@ app.get("/", (req, res) => {
   res.send("Hello from the backend!");
 });
 
-// app.post("/api/user/newUser", (req, res) => {
-//   console.log("req.body", req.body);
-//   return res.status(200).json({
-//     message: "User already exists",
-//   }); // User already exists
-// });
 app.use("/api/user", userRouter);
 
 app.use("/api/memory", memoryRouter);
@@ -45,6 +39,5 @@ app.use("/api/memories", upload.single("audio"), audioRouter);
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-// Export the app for testing
+
 module.exports = app;
-// Export the server for testing

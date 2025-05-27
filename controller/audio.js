@@ -56,6 +56,9 @@ const newSummary = async (req, res) => {
     const parsedText = await parseAudioToText(req.file.filename);
 
     const response = await newPrompt(req, res, parsedText);
+    if (!response || !response.summary) {
+      return res.status(500).json({ message: "Error generating summary" });
+    }
 
     const memoryRef = await db.collection("memories").where("memoryId", "==", memoryId).get();
     if (memoryRef.empty) {
