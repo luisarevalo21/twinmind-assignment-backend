@@ -33,8 +33,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 
-app.use("/api/memory", memoryRouter);
-app.use("/api/memories", upload.single("audio"), audioRouter);
+app.use("/api/memory", VerifyToken, memoryRouter);
+app.use("/api/memories", VerifyToken, upload.single("audio"), audioRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
