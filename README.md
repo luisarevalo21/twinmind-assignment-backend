@@ -92,4 +92,4 @@ MIT License
 
 ## 📎 Related
 
-- [TwinMind Frontend Repo](https://github.com/your-username/twinmind-frontend)
+- [TwinMind Frontend Repo](https://github.com/luisarevalo21/twinmind-assignment)
